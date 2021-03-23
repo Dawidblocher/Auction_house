@@ -1,3 +1,5 @@
+Autorzy: Tomasz Blicharz 11527, Dawid Blocher 11528
+
 Temat projektu: Portal aukctyjny online
 
 Opis projektu:
