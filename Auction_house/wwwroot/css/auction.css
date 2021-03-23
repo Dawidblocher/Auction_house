@@ -1,0 +1,94 @@
+﻿.auction-miniature {
+    margin-bottom: 25px;
+    width: 25%;
+    padding: 10px;
+}
+
+.auction-wrapper {
+    display: flex;
+    padding: 100px 0;
+}
+
+.auction-thumbnail {
+    width: 50%;
+   
+}
+.auction-description {
+    width: 50%;
+    padding: 20px;
+}
+
+.new-auction-section{
+    padding: 40px 0;
+
+}
+
+.new-auction-section h2{
+    margin-bottom: 25px;
+}
+
+.bet-form-wrapper{
+    margin-top: 35px;
+}
+
+.bet-form-wrapper form{
+    display: flex;
+    align-items: flex-end;
+}
+
+.auction-thumbnail img{
+    max-width: 100%;
+}
+
+.auction-miniature .auction-wrapper {
+    flex-direction: column;
+}
+
+.auction-miniature .auction-thumbnail {
+    width: 100%;
+    padding: 0;
+    height: 170px;
+    overflow: hidden;
+    position: relative;
+}
+
+.auction-miniature .auction-description {
+    width: 100%;
+    padding: 0;
+    
+}
+
+.auction-miniature .auction-thumbnail img {
+    height: 100%;
+    width: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: initial;
+}
+
+.btn-primary {
+    background: #ff4141;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 10px;
+}
+
+.auction-miniature h3{
+    text-align:left;
+}
+
+.auction-miniature p {
+    text-align: left;
+    min-height: 24px;
+}
+
+.auction-price{
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.auction-list{
+    display: flex;
+    flex-wrap: wrap;
+}

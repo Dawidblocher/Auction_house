@@ -1,0 +1,49 @@
+﻿@model Auction_house.Entity.AuctionEntity
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<section class="auction-wrapper">
+    <div class="auction-thumbnail">
+        <img src="~/img/auctionThumbs/@(Model.fileName)" />
+    </div>
+    <div class="auction-description">
+        <h3>@Model.Name</h3>
+        <p>@Model.Category</p>
+        <div class="auction-price">
+            <div class="auction-price">
+             
+                <span class="price">Aktualna cena: @Model.Price zł</span>
+            </div>
+            <div class="auction-price">Koniec aukcji: @Model.EndDate</div>
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <div class="bet-form-wrapper">
+                    @using (Html.BeginForm("Index", "Auction", new { id = @Model.Id }, FormMethod.Post, true, new { id = "bet-form", idauction = @Model.Id }))
+                    {
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.Price, "Twoja cena")
+                            @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Licytuj</button>
+                        </div>
+                    }
+                    <div class="massage-wrap"></div>
+                </div>
+                <div>
+                    
+                    <h4>Wygrywa licytację: @Model.Auctioner @User</h4>
+  
+
+                    </div>
+            }
+        </div> 
+        
+    </div>
+</section>
+
+@section Scripts {
+<script src="~/js/betAuction.js" ></script>
+
+}

@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Auction_house.Entity.AuctionEntity>
+
+@foreach (var auction in Model)
+{
+<div class="auction-miniature">
+    <div class="auction-wrapper">
+        <div class="auction-thumbnail">
+            <img src="~/img/auctionThumbs/@(auction.fileName)" />
+        </div>
+        <div class="auction-description">
+            <h3>@auction.Name</h3>
+            <p>@auction.Category</p>
+            <div class="auction-price">
+                <span>Aktualna Cena:</span>
+                <span>@auction.Price zł</span>
+            </div>
+            <div class="auction-price">Koniec aukcji: @auction.EndDate</div>
+            <a class="nav-link btn-primary" asp-area="" asp-controller="Auction" asp-action="Index" asp-route-id=@auction.Id>Przejdź do aukcji</a>
+        </div>
+    </div>
+</div>
+} 
